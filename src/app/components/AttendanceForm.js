@@ -130,7 +130,6 @@ const AttendanceForm = () =>{
 
                     <Button onClick={handleSubmit} style={{marginTop:'20px',marginBottom:'20px'}}>View Analysis</Button>
                 </form>
-
                 <div style={visibility?{display:'block'}:{display:'none'}}>
                     <h1><u>Your Result:</u></h1>
                     <h3>Your Current Credits: {currentcredits}</h3>
