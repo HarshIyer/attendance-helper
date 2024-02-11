@@ -1,7 +1,4 @@
-import { rem } from "@mantine/styles"
-
 export function algorithm(props){
-    console.log(props)
     let credits = props[0]
     let totalcredits = props[1]
     let course = props[2]

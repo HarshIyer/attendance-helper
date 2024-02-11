@@ -65,7 +65,6 @@ const AttendanceForm = () =>{
         }
         else{
             let res = algorithm([credits,totalcredits,course,parseInt(dateinformat)])
-            console.log(res)
             setideallastdate(res.ideallastdate);
             setnumberOfDaysMoreToAttend(res.numberOfDaysMoreToAttend);
             setcurrentpercentage(res.percentage)
@@ -147,7 +146,7 @@ const AttendanceForm = () =>{
             </Container>
             <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
             <p>Disclaimer: The analysis shown may be innaccurate. Don't completely rely on this tool.</p>
-            <p style={{marginTop:'0px'}}>Made by Harsh. <a href = "https://www.github.com/HarshIyer">Github</a></p>
+            <p style={{marginTop:'0px'}}>Made by Harsh. <a href = "https://github.com/HarshIyer/attendance-helper">Github</a></p>
             </div>
         </div>
     )
