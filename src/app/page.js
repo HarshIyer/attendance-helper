@@ -9,7 +9,6 @@ const App = () => {
       theme={{
         colorScheme: "dark",
         colors: {
-          // override dark colors here to change them for all components
           dark: [
             "#d5d7e0",
             "#acaebf",
