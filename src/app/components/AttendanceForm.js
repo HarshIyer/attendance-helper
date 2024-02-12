@@ -139,8 +139,8 @@ const AttendanceForm = () =>{
     return(
         <div>
             <div style={{textAlign:'center'}}>
-            <h1 style={{display:'flex',justifyContent:'center'}}>Attendance Assistor</h1>
-            <h3 style={{display:'flex',justifyContent:'center'}}>Today's is {day}, {date} {month} {year}</h3>
+            <h1 style={{display:'flex',justifyContent:'center'}}>Attendance Assistant</h1>
+            <h3 style={{display:'flex',justifyContent:'center'}}>Today is {day}, {date} {month} {year}</h3>
             </div>
             <Container 
             style={{transition:'0.5s auto',border:'1px solid black',height:'100%',width:'60wh',display:'flex',justifyContent:'space-between',alignItems:'center',borderRadius:'10px',flexDirection:'column'}}>
