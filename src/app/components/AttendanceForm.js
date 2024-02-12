@@ -169,7 +169,7 @@ const AttendanceForm = () =>{
                     <Select
                         style={{marginTop:'10px',transition:'none'}}
                         value={course}
-                        data={["IHS121","ICS121","ICS122","ICS123","IMA122","IEC121"]}
+                        data={["IHS121","ICS121","ICS122","ICS123","IMA121","IEC121"]}
                         defaultValue="IHS121"
                         onChange={(option)=>setCourse(option)}
                         clearable
