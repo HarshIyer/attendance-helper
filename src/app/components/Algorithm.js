@@ -76,7 +76,7 @@ export function algorithm(props){
     if(course == "IHS121"){
         maxearnablecredits = Math.floor(remainingdays*1/5);
     }
-    else if (course == "IMA122"||course == "ICS122"||course == "ICS123"){
+    else if (course == "IMA121"||course == "ICS122"||course == "ICS123"){
         maxearnablecredits = Math.floor(remainingdays*4/5)
     }
     else if(course == "IEC121"|| course=="ICS121"){

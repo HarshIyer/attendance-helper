@@ -1,8 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 *{
-  animation: 1s all ease-in;
+  font-weight: 500;
+  transition: none;
+  font-family: 'Rubik', sans-serif;
 }
+
+button{
+  transition: 0.5s ease;
+}
+
+
 
 a{
   text-decoration: none;
   color:navy;
 }
+
+a:hover{
+  text-decoration: underline;
+}
+
