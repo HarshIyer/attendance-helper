@@ -4,6 +4,7 @@ import { NumberInput,Select,Container, TextInput, Text, Button, Loader, Password
 import Swal from 'sweetalert2'
 import { algorithm } from './Algorithm'
 
+
 const AttendanceForm = () =>{
     const dateMega = new Date();
     let date = dateMega.getDate();
@@ -137,8 +138,10 @@ const AttendanceForm = () =>{
     
     return(
         <div>
+            <div style={{textAlign:'center'}}>
             <h1 style={{display:'flex',justifyContent:'center'}}>Attendance Helper</h1>
             <h3 style={{display:'flex',justifyContent:'center'}}>Today's date is: {date} {month} {year}, {day}</h3>
+            </div>
             <Container 
             style={{transition:'0.5s auto',border:'1px solid black',height:'100%',width:'60wh',display:'flex',justifyContent:'space-between',alignItems:'center',borderRadius:'10px',flexDirection:'column'}}>
                 <form>

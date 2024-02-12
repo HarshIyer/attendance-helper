@@ -4,6 +4,7 @@
   font-weight: 500;
   transition: none;
   font-family: 'Rubik', sans-serif;
+  color:#62f0f0
 }
 
 button{
@@ -14,10 +15,77 @@ button{
 
 a{
   text-decoration: none;
-  color:navy;
+  color:#00ffff;
 }
 
 a:hover{
   text-decoration: underline;
 }
 
+button{
+  color:white;
+}
+
+.mantine-Button-root{
+  color:white;
+  background-color: #137c7c;
+}
+
+.mantine-Button-root:hover{
+  background-color: #091c1c;
+}
+
+.mantine-Button-label{
+  color:white
+}
+
+.mantine-NumberInput-wrapper{
+  background-color: #091c1c;
+  border: 1px solid rgb(12, 139, 139);
+  border-radius: 5px;
+}
+
+.mantine-NumberInput-input{
+  background-color: #091c1c;
+  border: 1px solid rgb(12, 139, 139);
+
+}
+
+.mantine-Select-wrapper{
+  background-color: #091c1c;
+  border: 1px solid rgb(12, 139, 139);
+  border-radius: 5px;
+
+}
+.mantine-Select-description{
+  background-color: #091c1c;
+}
+.mantine-Select-dropdown{
+  background-color: #091c1c;
+}
+
+.mantine-Select-input{
+  background-color: #091c1c;
+  border: 1px solid rgb(12, 139, 139);
+  color:#62f0f0
+
+}
+
+
+.mantine-Button-label:hover{
+  color:white
+}
+
+.mantine-Container-root{
+  background-color: #083939;
+  color:white;
+  border-color: #8fe5e5;
+  ;
+}
+
+
+
+body{
+  background-color: #091c1c;
+  color:#eaf6f6;
+}
