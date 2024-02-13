@@ -103,7 +103,7 @@ export function algorithm(props){
         numberOfDaysMoreToAttend=remainingdays;
     }
     else {
-        while((creditscopy/parseFloat(maxfuturetotalcredits))*100<82){ //82% instead of 80% for safe spot
+        while((creditscopy/parseFloat(maxfuturetotalcredits))*100<80){ 
             creditscopy+=2;
             numberOfDaysMoreToAttend++;
         }   

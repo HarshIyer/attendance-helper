@@ -47,7 +47,7 @@ const AttendanceForm = () =>{
     const [datefuture,setdatefuture] = useState('')
     const [maxearnablecredits,setmaxearnablecredits] = useState(0)
     const EightyAttendance = () => {
-        if(maxfutureattendance>80){
+        if(maxfutureattendance>=80){
         return (
           <div style={{textAlign:'center'}}>
             <h1>
