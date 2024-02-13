@@ -106,6 +106,7 @@ export function algorithm(props){
         while((creditscopy/parseFloat(maxfuturetotalcredits))*100<80){ 
             creditscopy+=2;
             numberOfDaysMoreToAttend++;
+            numberOfDaysMoreToAttend++; //for some reason this fixed the code no idea why
         }   
     }
     let xyz = 0;
