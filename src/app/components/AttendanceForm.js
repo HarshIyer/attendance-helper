@@ -57,7 +57,7 @@ const AttendanceForm = () =>{
             <h3>Your Current Total Credits: {currenttotalcredits}</h3>
             <h3>Your Current Attendance percentage: {currentpercentage}%</h3>
             <h3>Number of Remaining Days in this semester: {remainingdays}</h3>
-            <h3>Number of Remaining lectures: {maxearnablecredits}</h3>
+            <h3>Number of Remaining lectures: {maxearnablecredits/2}</h3>
             <h3>Your maximum future attendance: {maxfutureattendance}%</h3>
               <h2>
                 <u>Just to keep above 80%:</u>
@@ -192,7 +192,7 @@ const AttendanceForm = () =>{
             </Container>
             <div style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',textAlign:'center'}}>
             <div>
-            <p>Disclaimer: The analysis shown may be innaccurate. Don't completely rely on this tool.</p>
+            <p>Disclaimer: The analysis shown may be innaccurate. Don't completely rely on this tool.</p>{maxearnablecredits}
             </div>
             <p style={{marginTop:'0px',textAlign:'center'}}>Made by Harsh. <a href = "https://github.com/HarshIyer/attendance-helper">Github</a></p>
             </div>

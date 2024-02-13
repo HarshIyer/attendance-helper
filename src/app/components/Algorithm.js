@@ -83,10 +83,10 @@ export function algorithm(props){
         maxearnablecredits = Math.floor(remainingdays*1/5);
     }
     else if (course == "IMA121 (Calculus and Algebra)"||course == "ICS122 (Computer Organization)"||course == "ICS123 (IT Workshop)"){
-        maxearnablecredits = Math.floor(remainingdays*4/5)
+        maxearnablecredits = (Math.floor(remainingdays*4/5))*2
     }
     else if(course == "IEC121 (Digital Design and Electric Circuits)"|| course=="ICS121 (Data Structures)"){
-        maxearnablecredits = Math.floor(remainingdays*5/5)
+        maxearnablecredits = (Math.floor(remainingdays*5/5))*2
     }
     if((maxearnablecredits%2)!=0){
         maxearnablecredits--;
@@ -106,7 +106,6 @@ export function algorithm(props){
         while((creditscopy/parseFloat(maxfuturetotalcredits))*100<80){ 
             creditscopy+=2;
             numberOfDaysMoreToAttend++;
-            numberOfDaysMoreToAttend++; //for some reason this fixed the code no idea why
         }   
     }
     let xyz = 0;
