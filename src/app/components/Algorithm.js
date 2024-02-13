@@ -13,15 +13,13 @@ export function algorithm(props){
         '29012024', '30012024', '31012024', '01022024', '02022024',
         '05022024', '06022024', '07022024', '08022024', '09022024',
         '12022024', '13022024', '14022024', '15022024', '16022024',
-        '19022024', '20022024', '21022024', '22022024', '23022024',
+        '22022024', '23022024',
         '26022024', '27022024', '28022024', '29022024', '01032024',
-        '04032024', '05032024', '06032024', '07032024', '08032024',
+        '04032024', '05032024', '06032024', '07032024',
         '11032024', '12032024', '13032024', '14032024', '15032024',
         '18032024', '19032024', '20032024', '21032024', '22032024',
-        '25032024', '26032024', '27032024', '28032024', '29032024',
+        '26032024', '27032024', '28032024',
         '01042024', '02042024', '03042024', '04042024', '05042024',
-        '08042024', '09042024', '10042024', '11042024', '12042024',
-        '15042024'
     ]
     let dateMega = new Date();
 
@@ -37,21 +35,8 @@ export function algorithm(props){
         }
     }
     let datefuturenum=dateMega.getDate();
-    let weekendflag=0;
-    if(flag==0){
-        let day = dateMega.getDay();
-        if(day==0){
-            datefuturenum = datefuturenum+1; 
-            weekendflag=1;
-        }
-        else if(day==6){
-            datefuturenum = datefuturenum+2;
-            weekendflag=1; 
-        }
-
-    }
     let monthformatted = ""
-
+    let datefuture = date;
     if(dateMega.getMonth()<10){
         monthformatted="0"+(dateMega.getMonth()+1);
     }
@@ -59,8 +44,29 @@ export function algorithm(props){
         monthformatted=""+(dateMega.getMonth()+1);
     }
 
+    if(flag==0){
+        for(let i=0;i<dateArray.length;i++){
+            if(parseInt((dateArray[i])[0]+(dateArray[i])[1])-datefuturenum>=0){
+                if(parseInt(dateArray[2]+dateArray[3]==(dateMega.getMonth()+1))){
+                    let difference = parseInt(dateArray[0]+dateArray[1])-datefuturenum;
+                    datefuture = dateArray[i+difference];
+                    break;
+                }
+            }
+            else if(parseInt((dateArray[i])[2])+((dateArray[i])[3])==(dateMega.getMonth()+2)){
+                for(let j=0;j<dateArray.length;j++){
+                    if(parseInt((dateArray[j])[2]+(dateArray[j])[3])==dateMega.getMonth()+1){
+                        datefuture = dateArray[j];
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
-    let datefuture = ""+ datefuturenum + monthformatted + dateMega.getFullYear();
+
+
+
 
     for(let i=0;i<dateArray.length;i++){
         if(dateArray[i]==datefuture){
@@ -73,16 +79,16 @@ export function algorithm(props){
 
 
     let maxearnablecredits = 0;
-    if(course == "IHS121"){
+    if(course == "IHS121 (Personality Development)"){
         maxearnablecredits = Math.floor(remainingdays*1/5);
     }
-    else if (course == "IMA121"||course == "ICS122"||course == "ICS123"){
+    else if (course == "IMA121 (Calculus and Algebra)"||course == "ICS122 (Computer Organization)"||course == "ICS123 (IT Workshop)"){
         maxearnablecredits = Math.floor(remainingdays*4/5)
     }
-    else if(course == "IEC121"|| course=="ICS121"){
+    else if(course == "IEC121 (Digital Design and Electric Circuits)"|| course=="ICS121 (Data Structures)"){
         maxearnablecredits = Math.floor(remainingdays*5/5)
     }
-    if(maxearnablecredits%2!=0){
+    if((maxearnablecredits%2)!=0){
         maxearnablecredits--;
     }
     let maxfuturecredits = credits+maxearnablecredits;
@@ -91,27 +97,26 @@ export function algorithm(props){
 
     let numberOfDaysMoreToAttend = 0;
     let maxfuturecreditsCopy = parseInt(maxfuturecredits)
-    let creditscopy = credits
+    let creditscopy = parseInt(credits)
     let message = ""
     if(maxfutureattendance<=80){
         numberOfDaysMoreToAttend=remainingdays;
-        message = "You have to attend all days!"
     }
     else {
-        while((creditscopy/maxfuturetotalcredits)*100<80){
+        while((creditscopy/parseFloat(maxfuturetotalcredits))*100<82){ //82% instead of 80% for safe spot
             creditscopy+=2;
             numberOfDaysMoreToAttend++;
         }   
     }
     let xyz = 0;
 
-    if(course == "IHS121"){
+    if(course == "IHS121 (Personality Development)"){
         xyz=numberOfDaysMoreToAttend*5/1;
     }
-    else if (course == "IMA121"||course == "ICS122"||course == "ICS123"){
+    else if (course == "IMA121 (Calculus and Algebra)"||course == "ICS122 (Computer Organization)"||course == "ICS123 (IT Workshop)"){
         xyz = numberOfDaysMoreToAttend*5/4
     }
-    else if(course == "IEC121"|| course=="ICS121"){
+    else if(course == "IEC121 (Digital Design and Electric Circuits)"|| course=="ICS121 (Data Structures)"){
         xyz = numberOfDaysMoreToAttend*5/5
     }
     xyz = parseInt(xyz)
@@ -126,6 +131,7 @@ export function algorithm(props){
       
     return(
         {
+            datefuture:datefuture,
             credits:credits,
             totalcredits:totalcredits,
             percentage:percentage,
@@ -137,7 +143,7 @@ export function algorithm(props){
             numberOfDaysMoreToAttend:numberOfDaysMoreToAttend,
             idealattendance:idealattendance,
             ideallastdate:ideallastdate,
-            message:message
+            maxearnablecredits:maxearnablecredits
         }
     )
 

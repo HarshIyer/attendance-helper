@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
+@import '@sweetalert2/theme-dark/dark.css';
 *{
   font-weight: 500;
   transition: none;
@@ -62,6 +62,17 @@ button{
 }
 .mantine-Select-dropdown{
   background-color: #091c1c;
+}
+
+.mantine-Select-options{
+  background-color: #091c1c;
+}
+.mantine-Select-label:hover{
+  background-color: #091c1c;
+}
+
+.mantine-Select-description{
+  background-color: black;
 }
 
 .mantine-Select-input{

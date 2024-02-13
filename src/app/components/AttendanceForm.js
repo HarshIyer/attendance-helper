@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { NumberInput,Select,Container, TextInput, Text, Button, Loader, PasswordInput } from '@mantine/core'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import { algorithm } from './Algorithm'
 
 
@@ -44,40 +44,42 @@ const AttendanceForm = () =>{
     const [remainingdays,setremainingdays] = useState(0);
     const [maxfutureattendance,setmaxfutureattendance] = useState(0);
     const [idealattendance,setidealattendance] = useState(0)
-
+    const [datefuture,setdatefuture] = useState('')
+    const [maxearnablecredits,setmaxearnablecredits] = useState(0)
     const EightyAttendance = () => {
         if(maxfutureattendance>80){
         return (
-          <div>
+          <div style={{textAlign:'center'}}>
             <h1>
               <u>Analysis Result:</u>
             </h1>
             <h3>Your Current Credits: {currentcredits}</h3>
             <h3>Your Current Total Credits: {currenttotalcredits}</h3>
             <h3>Your Current Attendance percentage: {currentpercentage}%</h3>
-            <h3>Number of Remaining Days: {remainingdays}</h3>
+            <h3>Number of Remaining Days in this semester: {remainingdays}</h3>
+            <h3>Number of Remaining lectures: {maxearnablecredits/2}</h3>
             <h3>Your maximum future attendance: {maxfutureattendance}%</h3>
               <h2>
-                <u>Just to reach 80%:</u>
+                <u>Just to keep above 80%:</u>
               </h2>
-              <h3>Attendance: {idealattendance}%</h3>
+              <h3>Final Attendance: {idealattendance}%</h3>
               <h3>Number of lectures more to attend: {numberOfDaysMoreToAttend}</h3>
               <h3>
-                Ideal Last Date: {idealdate} {monthsArray[idealmonth - 1]} {idealyear}
+                Ideal Last Date: {idealdate} {monthsArray[idealmonth - 1]} {idealyear} (May vary depending on batch)
               </h3>
           </div>
         );
         }
         else{
             return(
-                <div>
+                <div style={{textAlign:'center'}}>
+                    <h3>Your max reachable attendance is: {maxfutureattendance}%</h3>
                     <h3>You will have to pay fine. Fine amount will be updated soon.</h3>
                 </div>
             )
         }
       };
       
-
 
     const handleSubmit = (event) =>{
         // event.preventDefault();
@@ -128,6 +130,8 @@ const AttendanceForm = () =>{
             setVisibility(true);
             setcurrentcredits(res.credits)
             setcurrenttotalcredits(res.totalcredits)
+            setdatefuture ( res.datefuture)
+            setmaxearnablecredits(res.maxearnablecredits)
     
         }   
     }
@@ -172,7 +176,7 @@ const AttendanceForm = () =>{
                     <Select
                         style={{marginTop:'10px',transition:'none'}}
                         value={course}
-                        data={["IHS121","ICS121","ICS122","ICS123","IMA121","IEC121"]}
+                        data={["IHS121 (Personality Development)","ICS121 (Data Structures)","ICS122 (Computer Organization)","ICS123 (IT Workshop)","IMA121 (Calculus and Algebra)","IEC121 (Digital Design and Electric Circuits)"]}
                         defaultValue="IHS121"
                         onChange={(option)=>setCourse(option)}
                         clearable
