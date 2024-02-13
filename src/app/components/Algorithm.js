@@ -80,7 +80,7 @@ export function algorithm(props){
 
     let maxearnablecredits = 0;
     if(course == "IHS121 (Personality Development)"){
-        maxearnablecredits = Math.floor(remainingdays*1/5);
+        maxearnablecredits = (Math.floor(remainingdays*1/5))*2;
     }
     else if (course == "IMA121 (Calculus and Algebra)"||course == "ICS122 (Computer Organization)"||course == "ICS123 (IT Workshop)"){
         maxearnablecredits = (Math.floor(remainingdays*4/5))*2
