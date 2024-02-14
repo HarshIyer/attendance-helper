@@ -82,7 +82,7 @@ const AttendanceForm = () =>{
       
 
     const handleSubmit = (event) =>{
-        // event.preventDefault();
+        event.preventDefault();
         if(credits==0||totalcredits==0){
             Swal.fire({
                 icon: "error",
@@ -192,7 +192,7 @@ const AttendanceForm = () =>{
             </Container>
             <div style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',textAlign:'center'}}>
             <div>
-            <p>Disclaimer: The analysis shown may be innaccurate. Don't completely rely on this tool.</p>{maxearnablecredits}
+            <p>Disclaimer: The analysis shown may be innaccurate. Don't completely rely on this tool.</p>
             </div>
             <p style={{marginTop:'0px',textAlign:'center'}}>Made by Harsh. <a href = "https://github.com/HarshIyer/attendance-helper">Github</a></p>
             </div>
